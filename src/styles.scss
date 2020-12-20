@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+.icon-color {
+  background-color: #94536d !important;
+}
+
+body {
+  background-color: #E5E5E5;
+}
+.navbar {
+  padding: 16px !important;
+}
+ @media only screen and  (max-width: 1290px) {}
+ @media only screen and  (max-width: 1064px) {}
+ @media only screen and  (max-width: 768px) {}
+ @media only screen and  (max-width: 650px) {
+  .boxie-caption {
+    position: relative;
+    left: 40px;
+  }
+  .boxie-boy{
+    left: 135px !important;
+  }
+   .join-us {
+     margin-left: 37px;
+   }
+   a.nav-link {
+     position: relative;
+     left: -33px !important;
+     text-align: center;
+   }
+   .navbar-brand {
+     position: relative;
+     left: 37px;
+   }
+ }
+ @media only screen and  (max-width: 460px) {
+   .join-us {
+     margin-left: 35px;
+   }
+   a.nav-link {
+     position: relative;
+     left: -35px !important;
+     text-align: center;
+   }
+   .navbar-brand {
+     position: relative;
+     left: 35px;
+   }
+ }

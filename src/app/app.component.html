@@ -1,0 +1,100 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <!-- Default form login -->
+            <form class="text-center border border-light p-5" #form="ngForm" *ngFor="let data of Json">
+
+                <p class="h4 mb-4">Form</p>
+
+                    <!-- Label -->
+
+                    <div class="form-row mb-4" *ngFor="let value of labels;">
+                        <div class="col">
+                            <label>{{value.label}}</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" ngModel name="label" #label="ngModel" [(ngModel)]="value.label" (focus)="updateValues()" [ngModelOptions]="{standalone: true}" class="form-control mb-4" placeholder="Label">
+                        </div>
+                    </div>
+                    
+                    <!-- Label -->
+
+
+                    <!-- TextBox -->
+
+                    <div *ngFor="let value of textBoxs;">
+                        <input type="text" ngModel name="textBox" #textBox="ngModel" [(ngModel)]="value.textBox" (focus)="updateValues()" [ngModelOptions]="{standalone: true}" class="form-control mb-4" placeholder="TextBox">
+                    </div>
+                    
+                    <!-- TextBox End -->
+
+          
+
+                    <!-- Checkbox -->
+
+                    <ul>
+                        <li class="form-row mb-4" *ngFor="let value of checkboxs">  
+                          <div class="col">
+                                <mdb-checkbox [(ngModel)]="value.checkBox" ngModel name="checkBox" #checkBox="ngModel" [ngModelOptions]="{standalone: true}">{{value.checkBox}}</mdb-checkbox>
+                          </div>
+                          
+                          <div class="col">
+                                <input type="text" ngModel name="checkBoxValue" #checkBoxValue="ngModel" [(ngModel)]="value.checkBox" (focus)="updateValues()" [ngModelOptions]="{standalone: true}" class="form-control mb-4">
+                          </div>
+                        </li>
+                    </ul>
+
+                    <!-- Checkbox End -->
+                   
+                    <!-- radio -->
+
+                    <div class="form-row mb-4" *ngFor="let value of radios;">
+                            <div class="col">                        
+                                <div class="custom-control custom-radio">
+                                    <input id="value.radio" type="radio" class="custom-control-input" value="value.radio" name="radio" ngModel [(ngModel)]="value.radio" [ngModelOptions]="{standalone: true}">
+                                    <label class="custom-control-label" for="value.radio">{{value.radio}}</label>
+                                </div>
+                            </div>                                 
+
+                            <div class="col">                                
+                                <input type="text" ngModel name="radio" #radio="ngModel" [(ngModel)]="value.radio" (focus)="updateValues()" [ngModelOptions]="{standalone: true}" class="form-control mb-4">
+                            </div>
+                    </div>
+                    
+                    <!-- radio End -->
+
+
+                <!-- submit button -->
+                <button mdbBtn color="info" block="true" class="my-4" type="submit">Submit</button>
+
+            </form>
+            <!-- Default form login -->
+        </div>
+        <div class="col-lg-6 col-md-6 ">
+            <form>
+                  <div class="md-form">
+                    <textarea type="text" id="textarea" class="md-textarea form-control" [(ngModel)]="showjson"
+                     ngModel name="textArea" #textArea="ngModel" mdbInput></textarea>
+                    <label for="textarea">Drop a Json object</label>
+                    <!-- <button (click)="updateJson(textArea.value)">add</button>-->
+                    <button mdbBtn color="info" (click)="update(textArea.value)" *ngIf="updateValuesBtn == true">update values</button> 
+                  </div>                  
+            </form>
+            
+            <p>please start with your object and then start to copy and paste the properties from down blow</p>
+            
+            <h5><span class="dot" style="background-color: red;"></span> "label":""</h5>
+            <p> <strong>labels object: </strong>  {{showLabels}}</p>
+
+            <h5><span class="dot" style="background-color: yellow;"></span> "textBox":""</h5>
+            <p> <strong>textBox object: </strong>  {{showtextBoxs}}</p>
+            
+            <h5><span class="dot" style="background-color: palevioletred;"></span> "radio":""</h5>
+            <p> <strong>radio object: </strong>  {{showRadios}}</p>
+
+            <h5><span class="dot" style="background-color: cadetblue;"></span> "checkBox":""</h5>
+            <p> <strong>checkBox object: </strong> {{showCheckboxs}}</p>
+         
+        </div>
+    </div>
+</div>
